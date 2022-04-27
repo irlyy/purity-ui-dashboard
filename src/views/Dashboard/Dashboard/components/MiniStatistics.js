@@ -13,6 +13,7 @@ import CardBody from "components/Card/CardBody.js";
 import IconBox from "components/Icons/IconBox";
 import React from "react";
 import { useFetchCoingeckoData } from './useFetchCoingeckoData';
+import { formatDollar } from "utils/util"
 
 const MiniStatistics = ({ title }) => {
   const { price, image, percentage } = useFetchCoingeckoData(title);
@@ -33,7 +34,7 @@ const MiniStatistics = ({ title }) => {
             </StatLabel>
             <Flex>
               <StatNumber fontSize='lg' color={textColor}>
-                {price}
+                {formatDollar(price, 20)}
               </StatNumber>
               <StatHelpText
                 alignSelf='flex-end'

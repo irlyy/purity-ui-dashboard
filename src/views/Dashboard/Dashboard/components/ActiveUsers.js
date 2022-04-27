@@ -13,6 +13,7 @@ import {
 import React from "react";
 import ChartStatistics from "./ChartStatistics";
 import { useFetchCoingeckoData } from './useFetchCoingeckoData';
+import { formatDollar, formatNum } from "utils/util"
 
 const ActiveUsers = ({ title, chart }) => {
   const { marketCap, totalVolume, marketCapChange: percentage, circulatingSupply, ath } = useFetchCoingeckoData('bitcoin');
@@ -40,25 +41,25 @@ const ActiveUsers = ({ title, chart }) => {
           <SimpleGrid gap={{ sm: "12px" }} columns={4}>
             <ChartStatistics
               title={"market_cap"}
-              amount={marketCap}
+              amount={formatDollar(marketCap, 20)}
               percentage={20}
               icon={<WalletIcon h={"15px"} w={"15px"} color={iconBoxInside} />}
             />
             <ChartStatistics
               title={"total_volume"}
-              amount={totalVolume}
+              amount={formatDollar(totalVolume, 20)}
               percentage={80}
               icon={<RocketIcon h={"15px"} w={"15px"} color={iconBoxInside} />}
             />
             <ChartStatistics
               title={"circulating_supply"}
-              amount={circulatingSupply}
+              amount={formatNum(circulatingSupply)}
               percentage={30}
               icon={<CartIcon h={"15px"} w={"15px"} color={iconBoxInside} />}
             />
             <ChartStatistics
               title={"ath"}
-              amount={ath}
+              amount={formatDollar(ath, 20)}
               percentage={40}
               icon={<StatsIcon h={"15px"} w={"15px"} color={iconBoxInside} />}
             />
