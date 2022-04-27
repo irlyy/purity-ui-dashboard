@@ -12,8 +12,11 @@ import Card from "components/Card/Card.js";
 import CardBody from "components/Card/CardBody.js";
 import IconBox from "components/Icons/IconBox";
 import React from "react";
+import useFetchCoingeckoData from './useFetchCoingeckoData';
 
-const MiniStatistics = ({ title, amount, percentage, icon }) => {
+const MiniStatistics = ({ title, icon }) => {
+  const { price, image, percentage } = useFetchCoingeckoData(title);
+  console.log(price);
   const iconTeal = useColorModeValue("teal.300", "teal.300");
   const textColor = useColorModeValue("gray.700", "white");
 
@@ -31,7 +34,7 @@ const MiniStatistics = ({ title, amount, percentage, icon }) => {
             </StatLabel>
             <Flex>
               <StatNumber fontSize='lg' color={textColor}>
-                {/* {coinPrice.price} */}
+                {price}
               </StatNumber>
               <StatHelpText
                 alignSelf='flex-end'
@@ -46,7 +49,7 @@ const MiniStatistics = ({ title, amount, percentage, icon }) => {
             </Flex>
           </Stat>
           <IconBox as='box' h={"45px"} w={"45px"} bg={iconTeal}>
-            {icon}
+            <img src={image}/>
           </IconBox>
         </Flex>
       </CardBody>
