@@ -8,16 +8,9 @@ import {
 } from "@chakra-ui/react";
 // assets
 import peopleImage from "assets/img/people-image.png";
-import logoChakra from "assets/svg/logo-white.svg";
 import BarChart from "components/Charts/BarChart";
 import LineChart from "components/Charts/LineChart";
-// Custom icons
-import {
-  CartIcon,
-  DocumentIcon,
-  GlobeIcon,
-  WalletIcon,
-} from "components/Icons/Icons.js";
+import youting0 from "assets/img/youting0.jpeg";
 import React from "react";
 import { dashboardTableData, timelineData } from "variables/general";
 import ActiveUsers from "./components/ActiveUsers";
@@ -36,19 +29,15 @@ export default function Dashboard() {
       <SimpleGrid columns={{ sm: 1, md: 2, xl: 4 }} spacing='24px'>
         <MiniStatistics
           title={"bitcoin"}
-          icon={<WalletIcon h={"24px"} w={"24px"} color={iconBoxInside} />}
         />
         <MiniStatistics
           title={"ethereum"}
-          icon={<GlobeIcon h={"24px"} w={"24px"} color={iconBoxInside} />}
         />
         <MiniStatistics
           title={"binancecoin"}
-          icon={<DocumentIcon h={"24px"} w={"24px"} color={iconBoxInside} />}
         />
         <MiniStatistics
           title={"vai"}
-          icon={<CartIcon h={"24px"} w={"24px"} color={iconBoxInside} />}
         />
       </SimpleGrid>
       <Grid
@@ -57,14 +46,14 @@ export default function Dashboard() {
         my='26px'
         gap='24px'>
         <BuiltByDevelopers
-          title={"Built by Developers"}
-          name={"Purity UI Dashboard"}
+          title={"Built by YTDF club"}
+          name={"YTDF"}
           description={
-            "From colors, cards, typography to complex elements, you will find the full documentation."
+            "YTDF is an innovative club and a new kind of Dao. Everyone in YTDF will be rich. Welcome to join us."
           }
           image={
             <Image
-              src={logoChakra}
+              src={youting0}
               alt='chakra image'
               minWidth={{ md: "300px", lg: "auto" }}
             />
@@ -72,9 +61,9 @@ export default function Dashboard() {
         />
         <WorkWithTheRockets
           backgroundImage={peopleImage}
-          title={"Work with the rockets"}
+          title={"Work with the YTDF club"}
           description={
-            "Wealth creation is a revolutionary recent positive-sum game. It is all about who takes the opportunity first."
+            "Wealth creation is a revolutionary recent positive-sum game. It is all about who takes the opportunity first. You will be rich."
           }
         />
       </Grid>
@@ -84,7 +73,7 @@ export default function Dashboard() {
         gap='24px'
         mb={{ lg: "26px" }}>
         <ActiveUsers
-          title={"Active Users"}
+          title={"bitcoin market cap"}
           percentage={23}
           chart={<BarChart />}
         />

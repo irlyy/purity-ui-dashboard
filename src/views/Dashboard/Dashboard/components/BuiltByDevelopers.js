@@ -6,6 +6,7 @@ import {
   Spacer,
   Text,
   useColorModeValue,
+  Link,
 } from "@chakra-ui/react";
 // Custom components
 import Card from "components/Card/Card.js";
@@ -50,7 +51,9 @@ const BuiltByDevelopers = ({ title, name, description, image }) => {
                   transition='all .5s ease'
                   my={{ sm: "1.5rem", lg: "0px" }}
                   _hover={{ me: "4px" }}>
-                  Read more
+                  <Link color='teal.500' href='https://bitcoin.org/' target="_blank">
+                    Read more
+                  </Link>
                 </Text>
                 <Icon
                   as={BsArrowRight}
@@ -78,7 +81,7 @@ const BuiltByDevelopers = ({ title, name, description, image }) => {
           </Flex>
         </Flex>
       </CardBody>
-    </Card>
+    </Card >
   );
 };
 

@@ -12,8 +12,10 @@ import {
 } from "components/Icons/Icons.js";
 import React from "react";
 import ChartStatistics from "./ChartStatistics";
+import { useFetchCoingeckoData } from './useFetchCoingeckoData';
 
-const ActiveUsers = ({ title, percentage, chart }) => {
+const ActiveUsers = ({ title, chart }) => {
+  const { marketCap, totalVolume, marketCapChange: percentage, circulatingSupply, ath } = useFetchCoingeckoData('bitcoin');
   const iconBoxInside = useColorModeValue("white", "white");
   const textColor = useColorModeValue("gray.700", "white");
   return (
@@ -30,33 +32,33 @@ const ActiveUsers = ({ title, percentage, chart }) => {
                 as='span'
                 color={percentage > 0 ? "green.400" : "red.400"}
                 fontWeight='bold'>
-                {percentage > 0 ? `+${percentage}%` : `-${percentage}%`}
+                {percentage > 0 ? `${percentage}%` : `${percentage}%`}
               </Text>{" "}
-              than last week
+              than last day
             </Text>
           </Flex>
           <SimpleGrid gap={{ sm: "12px" }} columns={4}>
             <ChartStatistics
-              title={"Users"}
-              amount={"32,984"}
+              title={"market_cap"}
+              amount={marketCap}
               percentage={20}
               icon={<WalletIcon h={"15px"} w={"15px"} color={iconBoxInside} />}
             />
             <ChartStatistics
-              title={"Clicks"}
-              amount={"2.42m"}
+              title={"total_volume"}
+              amount={totalVolume}
               percentage={80}
               icon={<RocketIcon h={"15px"} w={"15px"} color={iconBoxInside} />}
             />
             <ChartStatistics
-              title={"Sales"}
-              amount={"2,400$"}
+              title={"circulating_supply"}
+              amount={circulatingSupply}
               percentage={30}
               icon={<CartIcon h={"15px"} w={"15px"} color={iconBoxInside} />}
             />
             <ChartStatistics
-              title={"Items"}
-              amount={"320"}
+              title={"ath"}
+              amount={ath}
               percentage={40}
               icon={<StatsIcon h={"15px"} w={"15px"} color={iconBoxInside} />}
             />

@@ -1,7 +1,8 @@
 export const barChartData = [
   {
-    name: "Sales",
-    data: [330, 250, 110, 300, 490, 350, 270, 130, 425],
+    name: "market_cap_percentage",
+    // data: [330, 250, 110, 300, 490, 350, 270, 130, 425],
+    data: [39, 18, 4, 3, 2, 1.7, 1.6, 1.5, 1.4, 1.0],
   },
 ];
 
@@ -27,7 +28,8 @@ export const barChartOptions = {
     theme: "dark",
   },
   xaxis: {
-    categories: ["Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+    // categories: ["Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+    categories: ["btc", "eth", "usdt", "bnb", "usdc", "sol", "xrp", "luna", "ada", "doge"],
     show: false,
     labels: {
       show: false,
