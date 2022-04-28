@@ -13,11 +13,13 @@ import {
 // Custom components
 import Card from "components/Card/Card.js";
 import CardHeader from "components/Card/CardHeader.js";
-import DashboardTableRow from "components/Tables/DashboardTableRow";
+import DashboardTableRowNew from "components/Tables/DashboardTableRowNew";
 import React from "react";
 import { IoCheckmarkDoneCircleSharp } from "react-icons/io5";
+import { useFetchCoingeckoTrending } from 'utils/useFetchCoingeckoData';
 
 const Projects = ({ title, amount, captions, data }) => {
+  const { trendingData } = useFetchCoingeckoTrending();
   const textColor = useColorModeValue("gray.700", "white");
 
   return (
@@ -56,15 +58,13 @@ const Projects = ({ title, amount, captions, data }) => {
           </Tr>
         </Thead>
         <Tbody>
-          {data.map((row) => {
+          {trendingData && trendingData.map((row) => {
             return (
-              <DashboardTableRow
-                key={row.name}
-                name={row.name}
-                logo={row.logo}
-                members={row.members}
-                budget={row.budget}
-                progression={row.progression}
+              <DashboardTableRowNew
+                name={row.item.name}
+                logo={row.item.small}
+                symbol={row.item.symbol}
+                marketCapRank={row.item.market_cap_rank}
               />
             );
           })}

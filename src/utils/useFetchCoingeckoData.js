@@ -34,27 +34,17 @@ export const useFetchCoingeckoData = (coinId) => {
     return { price, image, percentage, marketCap, totalVolume, marketCapChange, circulatingSupply, ath };
 }
 
-// export const useFetchCoingeckoTrending = () => {
-//     const [id, setId] = useState(null);
-//     const [name, setName] = useState(null);
-//     const [symbol, setSymbol] = useState(null);
+export const useFetchCoingeckoTrending = () => {
+    useEffect(() => {
+        axios
+            .get('https://api.coingecko.com/api/v3/search/trending')
+            .then(function (response) {
+                setTrendingData(response.data.coins);
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+    }, []);
 
-//     const [marketCapRank, setMarketCapRank] = useState(null);
-//     const [image, setImage] = useState(null);
-
-//     useEffect(() => {
-//         axios
-//             .get('https://api.coingecko.com/api/v3/search/trending')
-//             .then(function (response) {
-//                 response.data.coins.forEach(item => {
-//                     setId(item.item.id);
-//                     console.log(id);
-//                 })
-//             })
-//             .catch(function (error) {
-//                 console.log(error);
-//             });
-//     }, []);
-
-//     return { id, name, symbol, marketCapRank, image };
-// }
+    return { trendingData };
+}
