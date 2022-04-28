@@ -12,8 +12,8 @@ import {
 } from "components/Icons/Icons.js";
 import React from "react";
 import ChartStatistics from "./ChartStatistics";
-import { useFetchCoingeckoData } from './useFetchCoingeckoData';
-import { formatDollar, formatNum } from "utils/util"
+import { useFetchCoingeckoData } from 'utils/useFetchCoingeckoData';
+import { formatDollar, formatNum } from "utils/numberUtil"
 
 const ActiveUsers = ({ title, chart }) => {
   const { marketCap, totalVolume, marketCapChange: percentage, circulatingSupply, ath } = useFetchCoingeckoData('bitcoin');

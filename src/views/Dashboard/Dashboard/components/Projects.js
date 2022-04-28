@@ -37,9 +37,8 @@ const Projects = ({ title, amount, captions, data }) => {
             />
             <Text fontSize='sm' color='gray.400' fontWeight='normal'>
               <Text fontWeight='bold' as='span'>
-                {amount} done
-              </Text>{" "}
-              this month.
+                Top-7 trending coins on CoinGecko as searched by users in the last 24 hours (Ordered by most popular first)
+              </Text>
             </Text>
           </Flex>
         </Flex>
