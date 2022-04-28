@@ -12,8 +12,8 @@ import Card from "components/Card/Card.js";
 import CardBody from "components/Card/CardBody.js";
 import IconBox from "components/Icons/IconBox";
 import React from "react";
-import { useFetchCoingeckoData } from './useFetchCoingeckoData';
-import { formatDollar } from "utils/util"
+import { useFetchCoingeckoData } from 'utils/useFetchCoingeckoData';
+import { formatDollar } from "utils/numberUtil"
 
 const MiniStatistics = ({ title }) => {
   const { price, image, percentage } = useFetchCoingeckoData(title);
