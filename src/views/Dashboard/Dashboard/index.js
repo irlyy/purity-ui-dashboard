@@ -76,7 +76,7 @@ export default function Dashboard() {
           chart={<BarChart />}
         />
         <SalesOverview
-          title={"Sales Overview"}
+          title={"Bitcoin and Ethereum price Overview"}
           percentage={5}
           chart={<LineChart />}
         />

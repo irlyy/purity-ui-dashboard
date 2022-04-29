@@ -15,13 +15,7 @@ const SalesOverview = ({ title, percentage, chart }) => {
             {title}
           </Text>
           <Text fontSize='md' fontWeight='medium' color='gray.400'>
-            <Text
-              as='span'
-              color={percentage > 0 ? "green.400" : "red.400"}
-              fontWeight='bold'>
-              {`${percentage}%`} more
-            </Text>{" "}
-            in 2021
+            price in last 30 days
           </Text>
         </Flex>
       </CardHeader>

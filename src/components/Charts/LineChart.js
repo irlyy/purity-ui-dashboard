@@ -1,6 +1,7 @@
 import React from "react";
 import ReactApexChart from "react-apexcharts";
 import { lineChartData, lineChartOptions } from "variables/charts";
+import { getChartData } from 'utils/useFetchCoincapData';
 
 class LineChart extends React.Component {
   constructor(props) {
@@ -12,10 +13,11 @@ class LineChart extends React.Component {
     };
   }
 
-  componentDidMount() {
+  async componentDidMount() {
+    const chartData = await getChartData();
     this.setState({
-      chartData: lineChartData,
-      chartOptions: lineChartOptions,
+      chartData: chartData.data,
+      chartOptions: chartData.options,
     });
   }
 

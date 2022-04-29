@@ -87,12 +87,12 @@ export const barChartOptions = {
 
 export const lineChartData = [
   {
-    name: "Mobile apps",
-    data: [50, 40, 300, 220, 500, 250, 400, 230, 500],
+    name: "Bitcoin",
+    data: [50000, 40000, 30000, 22000, 50000, 25000, 40000, 23000, 50000],
   },
   {
-    name: "Websites",
-    data: [30, 90, 40, 140, 290, 290, 340, 230, 400],
+    name: "Ethereum",
+    data: [3000, 9000, 4000, 1400, 2900, 2900, 3400, 2300, 4000],
   },
 ];
 
@@ -114,18 +114,18 @@ export const lineChartOptions = {
   xaxis: {
     type: "datetime",
     categories: [
-      "Jan",
-      "Feb",
-      "Mar",
-      "Apr",
-      "May",
-      "Jun",
-      "Jul",
-      "Aug",
-      "Sep",
-      "Oct",
-      "Nov",
-      "Dec",
+      "Jan1",
+      "Feb2",
+      "Mar3",
+      "Apr4",
+      "May5",
+      "Jun6",
+      "Jul7",
+      "Aug8",
+      "Sep9",
+      "Oct10",
+      "Nov11",
+      "Dec12",
     ],
     labels: {
       style: {
