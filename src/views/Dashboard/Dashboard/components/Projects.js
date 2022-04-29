@@ -61,6 +61,7 @@ const Projects = ({ title, amount, captions, data }) => {
           {trendingData && trendingData.map((row) => {
             return (
               <DashboardTableRowNew
+                id={row.item.id}
                 name={row.item.name}
                 logo={row.item.small}
                 symbol={row.item.symbol}

@@ -12,7 +12,7 @@ import BarChart from "components/Charts/BarChart";
 import LineChart from "components/Charts/LineChart";
 import youting0 from "assets/img/youting0.jpeg";
 import React from "react";
-import { dashboardTableData, timelineData } from "variables/general";
+import { timelineData } from "variables/general";
 import ActiveUsers from "./components/ActiveUsers";
 import BuiltByDevelopers from "./components/BuiltByDevelopers";
 import MiniStatistics from "./components/MiniStatistics";
@@ -22,8 +22,6 @@ import SalesOverview from "./components/SalesOverview";
 import WorkWithTheRockets from "./components/WorkWithTheRockets";
 
 export default function Dashboard() {
-  const iconBoxInside = useColorModeValue("white", "white");
-
   return (
     <Flex flexDirection='column' pt={{ base: "120px", md: "75px" }}>
       <SimpleGrid columns={{ sm: 1, md: 2, xl: 4 }} spacing='24px'>
@@ -89,9 +87,7 @@ export default function Dashboard() {
         gap='24px'>
         <Projects
           title={"Top-7 trending coins"}
-          amount={30}
-          captions={["Companies", "Members", "Budget", "Completion"]}
-          data={dashboardTableData}
+          captions={["Name", "Sysbol", "MarketCap", "Price", "24H"]}
         />
         <OrdersOverview
           title={"Orders Overview"}

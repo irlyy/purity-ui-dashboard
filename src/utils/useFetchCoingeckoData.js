@@ -35,6 +35,8 @@ export const useFetchCoingeckoData = (coinId) => {
 }
 
 export const useFetchCoingeckoTrending = () => {
+    const [trendingData, setTrendingData] = useState(null);
+
     useEffect(() => {
         axios
             .get('https://api.coingecko.com/api/v3/search/trending')
