@@ -77,38 +77,38 @@ export const dashboardTableData = [
 export const timelineData = [
   {
     logo: FaBell,
-    title: "$2400, Design changes",
-    date: "22 DEC 7:20 PM",
+    title: "Set up develop team",
+    date: "18 June 2022",
     color: "teal.300",
   },
   {
     logo: FaHtml5,
-    title: "New order #4219423",
-    date: "21 DEC 11:21 PM",
+    title: "Product design (gamefi,nftfi,defi)",
+    date: "18 July 2022",
     color: "orange",
   },
   {
     logo: FaShoppingCart,
-    title: "Server Payments for April",
-    date: "21 DEC 9:28 PM",
+    title: "Kick off meeting",
+    date: "18 AUGUST 2022",
     color: "blue.400",
   },
   {
     logo: FaCreditCard,
-    title: "New card added for order #3210145",
-    date: "20 DEC 3:52 PM",
+    title: "Finish main contract and front page",
+    date: "18 OCTBER 2022",
     color: "orange.300",
   },
   {
     logo: SiDropbox,
-    title: "Unlock packages for Development",
-    date: "19 DEC 11:35 PM",
+    title: "Verify all function on testnet",
+    date: "18 NOV 2022",
     color: "purple",
   },
   {
     logo: AdobexdLogo,
-    title: "New order #9851258",
-    date: "18 DEC 4:41 PM",
+    title: "YTDF Production v2 Release",
+    date: "18 DEC 2022",
   },
 ];
 export const rtlDashboardTableData = [

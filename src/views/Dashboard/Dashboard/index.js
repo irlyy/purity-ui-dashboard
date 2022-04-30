@@ -90,8 +90,8 @@ export default function Dashboard() {
           captions={["Name", "Sysbol", "MarketCap", "Price", "24H"]}
         />
         <OrdersOverview
-          title={"Orders Overview"}
-          amount={30}
+          title={"How to Join Us"}
+          amount={5}
           data={timelineData}
         />
       </Grid>

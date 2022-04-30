@@ -36,21 +36,12 @@ export default function Footer(props) {
         <Link
           // color={linkTeal}
           color="teal.400"
-          href="https://www.creative-tim.com"
+          href="#"
           target="_blank"
         >
           {document.documentElement.dir === "rtl"
             ? " توقيت الإبداعية"
-            : "Creative Tim "}
-        </Link>
-        &
-        <Link
-          // color={linkTeal}
-          color="teal.400"
-          href="https://www.simmmple.com"
-          target="_blank"
-        >
-          {document.documentElement.dir === "rtl" ? "سيممبل " : " Simmmple"}
+            : "YTDF Club "}
         </Link>
         {document.documentElement.dir === "rtl"
           ? "للحصول على ويب أفضل"

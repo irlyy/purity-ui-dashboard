@@ -159,6 +159,15 @@ export default function HeaderLinks(props) {
                 aSrc={avatar2}
               />
             </MenuItem>
+            <MenuItem borderRadius="8px" mb="10px">
+              <ItemContent
+                time="2 days ago"
+                info="by Josh Henry"
+                boldInfo="New Album"
+                aName="Josh Henry"
+                aSrc={avatar2}
+              />
+            </MenuItem>
             <MenuItem borderRadius="8px">
               <ItemContent
                 time="3 days ago"

@@ -27,7 +27,7 @@ export default function FixedPlugin(props) {
         variant="no-hover"
         left={document.documentElement.dir === "rtl" ? "35px" : ""}
         right={document.documentElement.dir === "rtl" ? "" : "35px"}
-        bottom="30px"
+        bottom="50px"
         borderRadius="50px"
         boxShadow="0 2px 12px 0 rgb(0 0 0 / 16%)"
       >

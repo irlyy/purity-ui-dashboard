@@ -19,9 +19,9 @@ const OrdersOverview = ({ title, amount, data }) => {
           </Text>
           <Text fontSize='sm' color='gray.400' fontWeight='normal'>
             <Text fontWeight='bold' as='span' color='teal.300'>
-              {`${amount}%`}
+              {amount}
             </Text>{" "}
-            this month.
+            members till this month.
           </Text>
         </Flex>
       </CardHeader>
