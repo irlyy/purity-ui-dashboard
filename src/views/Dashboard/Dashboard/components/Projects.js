@@ -15,11 +15,21 @@ import Card from "components/Card/Card.js";
 import CardHeader from "components/Card/CardHeader.js";
 import DashboardTableRowNew from "components/Tables/DashboardTableRowNew";
 import React from "react";
+import { useEffect, useState } from "react";
 import { IoCheckmarkDoneCircleSharp } from "react-icons/io5";
-import { useFetchCoingeckoTrending } from 'utils/useFetchCoingeckoData';
+import { getTrendingData } from 'utils/useFetchCoingeckoData';
+import { formatDollar } from "utils/numberUtil"
 
-const Projects = ({ title, amount, captions, data }) => {
-  const { trendingData } = useFetchCoingeckoTrending();
+const Projects = ({ title, captions }) => {
+
+  const [trendingData, setTrendingData] = useState(null);
+
+  useEffect(async () => { //TODO: implement
+    const coingeckoTrending = await getTrendingData();
+    console.log(coingeckoTrending);
+    setTrendingData(coingeckoTrending);
+  }, []);
+
   const textColor = useColorModeValue("gray.700", "white");
 
   return (
@@ -67,6 +77,7 @@ const Projects = ({ title, amount, captions, data }) => {
                 logo={row.item.small}
                 symbol={row.item.symbol}
                 marketCapRank={row.item.market_cap_rank}
+                marketCap={formatDollar(row.item.coinMarketCap, 20)}
               />
             );
           })}

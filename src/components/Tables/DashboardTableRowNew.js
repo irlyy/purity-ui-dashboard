@@ -10,7 +10,7 @@ import { useFetchCoingeckoData } from 'utils/useFetchCoingeckoData';
 import { formatDollar } from "utils/numberUtil"
 
 function DashboardTableRowNew(props) {
-  const { id, name, logo, symbol, marketCapRank } = props;
+  const { id, name, logo, symbol, marketCapRank, marketCap} = props;
   const { price, marketCapChange: percentage } = useFetchCoingeckoData(id);
   const textColor = useColorModeValue("gray.700", "white");
   return (
@@ -31,6 +31,11 @@ function DashboardTableRowNew(props) {
       <Td>
         <Text fontSize="md" color={textColor} fontWeight="bold" pb=".5rem">
           {symbol}
+        </Text>
+      </Td>
+      <Td>
+        <Text fontSize="md" color={textColor} fontWeight="bold" pb=".5rem">
+          {marketCap}
         </Text>
       </Td>
       <Td>

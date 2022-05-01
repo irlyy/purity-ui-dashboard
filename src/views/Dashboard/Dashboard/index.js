@@ -87,7 +87,7 @@ export default function Dashboard() {
         gap='24px'>
         <Projects
           title={"Top-7 trending coins"}
-          captions={["Name", "Sysbol", "MarketCap", "Price", "24H"]}
+          captions={["Name", "Sysbol", "MarketCap", "MarketCapRank", "Price", "24H"]}
         />
         <OrdersOverview
           title={"How to Join Us"}
