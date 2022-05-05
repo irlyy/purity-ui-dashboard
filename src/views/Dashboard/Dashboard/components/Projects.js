@@ -24,10 +24,13 @@ const Projects = ({ title, captions }) => {
 
   const [trendingData, setTrendingData] = useState(null);
 
-  useEffect(async () => { //TODO: implement
-    const coingeckoTrending = await getTrendingData();
-    console.log(coingeckoTrending);
-    setTrendingData(coingeckoTrending);
+  useEffect(() => { //TODO: implement
+    const getResult = async () => {
+      const coingeckoTrending = await getTrendingData();
+      console.log(coingeckoTrending);
+      setTrendingData(coingeckoTrending);
+  };
+  getResult();
   }, []);
 
   const textColor = useColorModeValue("gray.700", "white");
