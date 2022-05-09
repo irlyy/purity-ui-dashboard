@@ -52,3 +52,8 @@ const useFetchCoinMarketCap = async (coinId) => {
     const response = await axios.get('https://api.coingecko.com/api/v3/coins/' + coinId);
     return response.data.market_data.market_cap.usd;
 }
+
+export const useFetchCoinsMarkets = async () => {
+    const response =  await axios.get('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false&price_change_percentage=7d%2C14d%2C30d');
+    return response.data;
+}

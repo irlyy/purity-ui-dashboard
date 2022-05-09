@@ -1,22 +1,16 @@
 // Chakra imports
 import { Flex } from "@chakra-ui/react";
 import React from "react";
-import Authors from "./components/Authors";
-import Projects from "./components/Projects";
+import CoinsMarkets from "./components/CoinsMarkets";
 import { tablesTableData, dashboardTableData } from "variables/general";
 
 function Tables() {
   return (
     <Flex direction='column' pt={{ base: "120px", md: "75px" }}>
-      <Authors
+      <CoinsMarkets
         title={"Authors Table"}
-        captions={["Author", "Function", "Status", "Employed", ""]}
+        captions={["#", "Coin", "Price", "24H", "7d", "14d", "30d", "24h volume", "Mkt Cap"]}
         data={tablesTableData}
-      />
-      <Projects
-        title={"Projects Table"}
-        captions={["Companies", "Budget", "Status", "Completion", ""]}
-        data={dashboardTableData}
       />
     </Flex>
   );

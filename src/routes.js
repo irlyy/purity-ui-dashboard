@@ -1,6 +1,7 @@
 // import
 import Dashboard from "views/Dashboard/Dashboard";
 import Tables from "views/Dashboard/Tables";
+import TablesNft from "views/Dashboard/TablesNft";
 import Billing from "views/Dashboard/Billing";
 import RTLPage from "views/Dashboard/RTL";
 import Profile from "views/Dashboard/Profile";
@@ -28,10 +29,18 @@ var dashRoutes = [
   },
   {
     path: "/tables",
-    name: "Tables",
+    name: "Cryptocurrency",
     rtlName: "لوحة القيادة",
     icon: <StatsIcon color="inherit" />,
     component: Tables,
+    layout: "/admin",
+  },
+  {
+    path: "/tablesNft",
+    name: "NFT",
+    rtlName: "لوحة القيادة",
+    icon: <StatsIcon color="inherit" />,
+    component: TablesNft,
     layout: "/admin",
   },
   {
