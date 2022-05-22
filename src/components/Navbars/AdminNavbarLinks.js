@@ -28,9 +28,45 @@ import PropTypes from "prop-types";
 import React from "react";
 import { NavLink } from "react-router-dom";
 import routes from "routes.js";
+import { useEffect, useState } from "react";
+import { connectWallet, getCurrentWalletConnected, mintNFT, mintNFT2 } from "utils/interact";
+import { getNeedInstallErrorStatus } from "utils/error-status";
 
 export default function HeaderLinks(props) {
   const { variant, children, fixed, secondary, onOpen, ...rest } = props;
+
+  const [walletAddress, setWallet] = useState("");
+  const [status, setStatus] = useState("");
+
+  const connectWalletPressed = async () => { //TODO: implement
+    const walletResponse = await connectWallet();
+    setStatus(walletResponse.status);
+    setWallet(walletResponse.address);
+  };
+
+  useEffect(async () => { //TODO: implement
+    const { address, status } = await getCurrentWalletConnected();
+    setWallet(address);
+    setStatus(status);
+    addWalletListener();
+  }, []);
+
+  function addWalletListener() {
+    if (window.ethereum) {
+      window.ethereum.on("accountsChanged", (accounts) => {
+        if (accounts.length > 0) {
+          setWallet(accounts[0]);
+          setStatus("👆🏽 Write a message in the text-field above.");
+        } else {
+          setWallet("");
+          setStatus("🦊 Connect to Metamask using the top right button.");
+        }
+      });
+    } else {
+      const { status } = getNeedInstallErrorStatus();
+      setStatus(status);
+    }
+  }
 
   // Chakra Color Mode
   let mainTeal = useColorModeValue("teal.300", "teal.300");
@@ -51,7 +87,7 @@ export default function HeaderLinks(props) {
       alignItems="center"
       flexDirection="row"
     >
-      <InputGroup
+      {/* <InputGroup
         cursor="pointer"
         bg={inputBg}
         borderRadius="15px"
@@ -89,11 +125,30 @@ export default function HeaderLinks(props) {
           fontSize="xs"
           py="11px"
           color={mainText}
-          placeholder="Type here..."
+          placeholder="Type here test1..."
           borderRadius="inherit"
         />
-      </InputGroup>
-      <NavLink to="/auth/signin">
+      </InputGroup> */}
+      <Button id="walletButton"
+        w="100%"
+        p="8px 32px"
+        me="8px"
+        colorScheme="teal"
+        borderColor="teal.300"
+        color="teal.300"
+        variant="outline"
+        fontSize="xs"
+        onClick={connectWalletPressed}>
+        {walletAddress.length > 0 ? (
+          "Connected: " +
+          String(walletAddress).substring(0, 6) +
+          "..." +
+          String(walletAddress).substring(38)
+        ) : (
+          <span>Connect Wallet</span>
+        )}
+      </Button>
+      {/* <NavLink to="/auth/signin">
         <Button
           ms="0px"
           px="0px"
@@ -117,15 +172,15 @@ export default function HeaderLinks(props) {
         >
           <Text display={{ sm: "none", md: "flex" }}>Sign In</Text>
         </Button>
-      </NavLink>
-      <SidebarResponsive
+      </NavLink> */}
+      {/* <SidebarResponsive
         logoText={props.logoText}
         secondary={props.secondary}
         routes={routes}
         // logo={logo}
         {...rest}
-      />
-      <SettingsIcon
+      /> */}
+      {/* <SettingsIcon
         cursor="pointer"
         ms={{ base: "16px", xl: "0px" }}
         me="16px"
@@ -134,8 +189,8 @@ export default function HeaderLinks(props) {
         color={navbarIcon}
         w="18px"
         h="18px"
-      />
-      <Menu>
+      /> */}
+      {/* <Menu>
         <MenuButton>
           <BellIcon color={navbarIcon} w="18px" h="18px" />
         </MenuButton>
@@ -179,7 +234,7 @@ export default function HeaderLinks(props) {
             </MenuItem>
           </Flex>
         </MenuList>
-      </Menu>
+      </Menu> */}
     </Flex>
   );
 }

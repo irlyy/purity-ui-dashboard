@@ -48,7 +48,7 @@ export default function Footer(props) {
           : " for a better web"}
       </Text>
       <List display="flex">
-        <ListItem
+        {/* <ListItem
           me={{
             base: "20px",
             md: "44px",
@@ -69,7 +69,7 @@ export default function Footer(props) {
           <Link color="gray.400" href="https://www.simmmple.com">
             {document.documentElement.dir === "rtl" ? "سيممبل" : "Simmmple"}
           </Link>
-        </ListItem>
+        </ListItem> */}
         <ListItem
           me={{
             base: "20px",
@@ -79,7 +79,6 @@ export default function Footer(props) {
           <Link
             color="gray.400"
             href="#blog"
-            href="https://creative-tim.com/blog"
           >
             {document.documentElement.dir === "rtl" ? "مدونة" : "Blog"}
           </Link>
@@ -88,7 +87,6 @@ export default function Footer(props) {
           <Link
             color="gray.400"
             href="#license"
-            href="https://www.creative-tim.com/license"
           >
             {document.documentElement.dir === "rtl" ? "رخصة" : "License"}
           </Link>

@@ -6,7 +6,7 @@ console.log(process.env);
 const alchemyKey = process.env.REACT_APP_ALCHEMY_KEY_RINKEBY;
 const { createAlchemyWeb3 } = require("@alch/alchemy-web3");
 const web3 = createAlchemyWeb3(alchemyKey);
-const contractABI = require('../contract-abi.json');
+const contractABI = require('./contract-abi.json');
 const contractAddress = "0xe599B98aeb04a40dCc897A29036cc753521aF97A";
 
 export const mintNFT = async (url, name, description) => {
