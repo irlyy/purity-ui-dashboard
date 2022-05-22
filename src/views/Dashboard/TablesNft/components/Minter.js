@@ -84,8 +84,8 @@ const Minter = (props) => {
   // }
 
   return (
-    <Flex flexDirection='column' pt={{ base: "120px", md: "75px" }}>
-      <Card minH='40px'>
+    <Flex flexDirection='column' maxH='100%' pt={{ base: "120px", md: "100px" }}>
+      <Card minH='100px'>
         <CardBody>
         <div className="Part1">
           <h1 id="title">🧙‍♂️ 游艇兜风 NFT Minter </h1>

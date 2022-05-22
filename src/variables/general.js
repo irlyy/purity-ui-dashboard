@@ -111,6 +111,45 @@ export const timelineData = [
     date: "18 DEC 2022",
   },
 ];
+
+export const nftMintSteps = [
+  {
+    logo: FaBell,
+    title: "Install metamask",
+    date: "18 June 2022",
+    color: "teal.300",
+  },
+  {
+    logo: FaHtml5,
+    title: "Change metamask to Rinkeby Test newwork",
+    date: "18 July 2022",
+    color: "orange",
+  },
+  {
+    logo: FaShoppingCart,
+    title: "Get some Rinkeby ETH",
+    date: "18 AUGUST 2022",
+    color: "blue.400",
+  },
+  {
+    logo: FaCreditCard,
+    title: "Simply add your asset's link, name, and description, then press Mint",
+    date: "18 OCTBER 2022",
+    color: "orange.300",
+  },
+  {
+    logo: SiDropbox,
+    title: "Check your Transaction Details, make sure it is success",
+    date: "18 NOV 2022",
+    color: "purple",
+  },
+  {
+    logo: AdobexdLogo,
+    title: "Opensea(https://testnets.opensea.io/) to sell your NFT",
+    date: "18 DEC 2022",
+  },
+];
+
 export const rtlDashboardTableData = [
   {
     logo: AdobexdLogo,
